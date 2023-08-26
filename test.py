@@ -79,60 +79,10 @@ def main():
     else:  # OOD Detection Validation
         ood_scores_list = []
         ood_metrics_list = []
-        if args.ood_method == 'base':
-            ind_scores = get_base_score(model, ind_test_loader)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_base_score(model, ood_test_loader)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'mc':
-            ind_scores = get_dropout_score(model, ind_test_loader, args.passes)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_dropout_score(
-                    model, ood_test_loader, args.passes)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'energy':
-            ind_scores = get_energy_score(model, ind_test_loader)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_energy_score(model, ood_test_loader)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'maxlogit':
-            ind_scores = get_maxlogit_score(model, ind_test_loader)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_maxlogit_score(model, ood_test_loader)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'pout':
-            ind_scores, ood_scores_list = get_pout_score(model,wiki_loader, args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'km':
-            ind_scores, ood_scores_list = get_km_score(args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'iflp':
-            ind_train_loader = get_data_loader(
-                args.dataset, 'train', tokenizer, args.batch_size)
-            ind_scores, ood_scores_list= get_iflp_score(model, ind_train_loader, ind_test_loader, ood_test_loaders, args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'maha':
+        if args.ood_method == 'maha':
             ind_scores, ood_scores_list = get_maha_score(args.ood_datasets, args.input_dir)
         elif args.ood_method == 'knn':
             ind_scores, ood_scores_list = get_knn_score(args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'd2u':
-            ind_scores = get_d2u_score(model, ind_test_loader)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_d2u_score(model, ood_test_loader)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'odin':
-            ind_dev_loader = get_data_loader(
-                args.dataset, 'dev', tokenizer, args.batch_size)
-            best_magnitude, best_temperature = searchGeneralizedOdinParameters(
-                model, ind_dev_loader, pooler_pos=pooler_pos)
-            ind_scores = get_ODIN_score(
-                model, ind_test_loader, best_magnitude, best_temperature, pooler_pos=pooler_pos)
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_ODIN_score(
-                    model, ood_test_loader, best_magnitude, best_temperature, pooler_pos=pooler_pos)
-                ood_scores_list.append(ood_scores)
-        elif args.ood_method == 'lof':
-            ind_train_loader = get_data_loader(
-                args.dataset, 'train', tokenizer, args.batch_size)
-            ind_scores, ood_scores_list = get_lof_score(
-                model, ind_train_loader, ind_test_loader, ood_test_loaders, pooler_pos=pooler_pos)
         elif args.ood_method == 'uniform':
             ind_scores = get_base_score(model, ind_test_loader)
             ind_scores = np.ones(len(ind_scores))
@@ -143,7 +93,7 @@ def main():
         else:
             raise NotImplementedError
 
-        _, _, _ind_scores, _ood_scores_list = get_out_score(model,wiki_loader, args.ood_datasets, args.input_dir)
+        _ind_scores, _ood_scores_list = get_out_score(model,wiki_loader, args.ood_datasets, args.input_dir)
 
         ind_scores = np.array([score1 - score2 * 0.5 for score1, score2 in zip(ind_scores, _ind_scores)])
 

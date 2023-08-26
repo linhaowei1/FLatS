@@ -1,0 +1,93 @@
+2023-08-24 13:30:40.924 | INFO     | __main__:main:64 - args:
+Namespace(batch_size=16, dataset='clinc', device='0,1,2,3', epochs=5, eval_metric='acc', log_file='./log/clinc/exp_13.txt', log_step=100, loss_type='ce', lr=2e-05, max_grad_norm=1.0, model='roberta-base', optimizer='adam', output_dir='./output/clinc/13', output_name='model.pt', pretrained_model=None, recadam_anneal_fun='sigmoid', recadam_anneal_k=0.2, recadam_anneal_t0=1000, recadam_anneal_w=1.0, recadam_pretrain_cof=5000.0, save_every_epoch=False, save_steps=-1, scl_reg=2.0, seed=13, shift_reg=0, weight_decay=0.0)
+2023-08-26 09:34:47.697 | INFO     | __main__:main:64 - args:
+Namespace(batch_size=16, dataset='clinc', device='0,1,2,3', epochs=5, eval_metric='acc', log_file='./log/clinc/exp_13.txt', log_step=100, loss_type='ce', lr=2e-05, max_grad_norm=1.0, model='roberta-base', optimizer='adam', output_dir='./output/clinc/13', output_name='model.pt', pretrained_model=None, recadam_anneal_fun='sigmoid', recadam_anneal_k=0.2, recadam_anneal_t0=1000, recadam_anneal_w=1.0, recadam_pretrain_cof=5000.0, save_every_epoch=False, save_steps=-1, scl_reg=2.0, seed=13, shift_reg=0, weight_decay=0.0)
+2023-08-26 09:34:56.134 | INFO     | __main__:main:77 - roberta-base model loaded
+2023-08-26 09:36:10.618 | INFO     | __main__:main:64 - args:
+Namespace(batch_size=16, dataset='clinc', device='0,1,2,3', epochs=5, eval_metric='acc', log_file='./log/clinc/exp_13.txt', log_step=100, loss_type='ce', lr=2e-05, max_grad_norm=1.0, model='roberta-base', optimizer='adam', output_dir='./output/clinc/13', output_name='model.pt', pretrained_model=None, recadam_anneal_fun='sigmoid', recadam_anneal_k=0.2, recadam_anneal_t0=1000, recadam_anneal_w=1.0, recadam_pretrain_cof=5000.0, save_every_epoch=False, save_steps=-1, scl_reg=2.0, seed=13, shift_reg=0, weight_decay=0.0)
+2023-08-26 09:36:17.265 | INFO     | __main__:main:77 - roberta-base model loaded
+2023-08-26 09:36:51.011 | INFO     | __main__:main:64 - args:
+Namespace(batch_size=16, dataset='clinc', device='0,1,2,3', epochs=5, eval_metric='acc', log_file='./log/clinc/exp_13.txt', log_step=100, loss_type='ce', lr=2e-05, max_grad_norm=1.0, model='../roberta-base', optimizer='adam', output_dir='./output/clinc/13', output_name='model.pt', pretrained_model=None, recadam_anneal_fun='sigmoid', recadam_anneal_k=0.2, recadam_anneal_t0=1000, recadam_anneal_w=1.0, recadam_pretrain_cof=5000.0, save_every_epoch=False, save_steps=-1, scl_reg=2.0, seed=13, shift_reg=0, weight_decay=0.0)
+2023-08-26 09:36:56.172 | INFO     | __main__:main:77 - ../roberta-base model loaded
+2023-08-26 09:36:56.263 | INFO     | __main__:main:86 - ../roberta-base tokenizer loaded
+2023-08-26 09:41:47.480 | INFO     | __main__:main:64 - args:
+Namespace(batch_size=16, dataset='clinc', device='0,1,2,3', epochs=5, eval_metric='acc', log_file='./log/clinc/exp_13.txt', log_step=100, loss_type='ce', lr=2e-05, max_grad_norm=1.0, model='../roberta-base', optimizer='adam', output_dir='./output/clinc/13', output_name='model.pt', pretrained_model=None, recadam_anneal_fun='sigmoid', recadam_anneal_k=0.2, recadam_anneal_t0=1000, recadam_anneal_w=1.0, recadam_pretrain_cof=5000.0, save_every_epoch=False, save_steps=-1, scl_reg=2.0, seed=13, shift_reg=0, weight_decay=0.0)
+2023-08-26 09:41:52.797 | INFO     | __main__:main:77 - ../roberta-base model loaded
+2023-08-26 09:41:52.897 | INFO     | __main__:main:86 - ../roberta-base tokenizer loaded
+2023-08-26 09:41:52.912 | INFO     | lib.data_loader:get_raw_data:666 - train set of clinc loaded, size = 15000
+2023-08-26 09:41:53.785 | INFO     | lib.data_loader:get_raw_data:666 - val set of clinc loaded, size = 3000
+2023-08-26 09:41:53.847 | INFO     | __main__:main:94 - dataset clinc loaded
+2023-08-26 09:41:53.847 | INFO     | __main__:main:95 - num_labels: 150
+2023-08-26 09:41:55.989 | INFO     | __main__:main:156 - starting training
+2023-08-26 09:41:55.990 | INFO     | __main__:main:163 - epoch 0 start
+2023-08-26 09:42:01.162 | INFO     | lib.training.common:train_common:93 - step 100, running loss = 494.14302015304565
+2023-08-26 09:42:05.843 | INFO     | lib.training.common:train_common:93 - step 200, running loss = 427.7218315601349
+2023-08-26 09:42:10.327 | INFO     | lib.training.common:train_common:93 - step 300, running loss = 357.8419301509857
+2023-08-26 09:42:14.966 | INFO     | lib.training.common:train_common:93 - step 400, running loss = 295.79292345046997
+2023-08-26 09:42:19.565 | INFO     | lib.training.common:train_common:93 - step 500, running loss = 248.90991115570068
+2023-08-26 09:42:24.187 | INFO     | lib.training.common:train_common:93 - step 600, running loss = 207.2866334915161
+2023-08-26 09:42:28.779 | INFO     | lib.training.common:train_common:93 - step 700, running loss = 173.10071432590485
+2023-08-26 09:42:33.139 | INFO     | lib.training.common:train_common:93 - step 800, running loss = 140.5188308954239
+2023-08-26 09:42:37.767 | INFO     | lib.training.common:train_common:93 - step 900, running loss = 116.87616467475891
+2023-08-26 09:42:40.998 | INFO     | __main__:main:172 - epoch 0 validation acc: 0.9323 
+2023-08-26 09:42:40.998 | INFO     | __main__:main:175 - best validation acc improved to 0.9323
+2023-08-26 09:42:41.655 | INFO     | __main__:main:179 - model saved to ./output/clinc/13/model.pt
+2023-08-26 09:42:41.655 | INFO     | __main__:main:186 - time for one epoch: 0:00:45.664766
+2023-08-26 09:42:41.657 | INFO     | __main__:main:163 - epoch 1 start
+2023-08-26 09:42:46.088 | INFO     | lib.training.common:train_common:93 - step 100, running loss = 89.1143342256546
+2023-08-26 09:42:50.663 | INFO     | lib.training.common:train_common:93 - step 200, running loss = 71.86043632030487
+2023-08-26 09:42:55.295 | INFO     | lib.training.common:train_common:93 - step 300, running loss = 58.07532700896263
+2023-08-26 09:42:59.607 | INFO     | lib.training.common:train_common:93 - step 400, running loss = 45.99976825714111
+2023-08-26 09:43:04.157 | INFO     | lib.training.common:train_common:93 - step 500, running loss = 36.70332933962345
+2023-08-26 09:43:08.875 | INFO     | lib.training.common:train_common:93 - step 600, running loss = 31.19038638472557
+2023-08-26 09:43:13.624 | INFO     | lib.training.common:train_common:93 - step 700, running loss = 27.967565447092056
+2023-08-26 09:43:18.350 | INFO     | lib.training.common:train_common:93 - step 800, running loss = 22.537348605692387
+2023-08-26 09:43:23.003 | INFO     | lib.training.common:train_common:93 - step 900, running loss = 18.447791501879692
+2023-08-26 09:43:26.233 | INFO     | __main__:main:172 - epoch 1 validation acc: 0.9653 
+2023-08-26 09:43:26.233 | INFO     | __main__:main:175 - best validation acc improved to 0.9653
+2023-08-26 09:43:29.431 | INFO     | __main__:main:179 - model saved to ./output/clinc/13/model.pt
+2023-08-26 09:43:29.432 | INFO     | __main__:main:186 - time for one epoch: 0:00:47.774785
+2023-08-26 09:43:29.435 | INFO     | __main__:main:163 - epoch 2 start
+2023-08-26 09:43:34.055 | INFO     | lib.training.common:train_common:93 - step 100, running loss = 15.083052769303322
+2023-08-26 09:43:38.629 | INFO     | lib.training.common:train_common:93 - step 200, running loss = 13.282439704984426
+2023-08-26 09:43:42.988 | INFO     | lib.training.common:train_common:93 - step 300, running loss = 11.29660939052701
+2023-08-26 09:43:47.397 | INFO     | lib.training.common:train_common:93 - step 400, running loss = 8.477094605565071
+2023-08-26 09:43:51.441 | INFO     | lib.training.common:train_common:93 - step 500, running loss = 5.401247400790453
+2023-08-26 09:43:55.380 | INFO     | lib.training.common:train_common:93 - step 600, running loss = 7.248314866796136
+2023-08-26 09:43:59.315 | INFO     | lib.training.common:train_common:93 - step 700, running loss = 7.4746725764125586
+2023-08-26 09:44:03.538 | INFO     | lib.training.common:train_common:93 - step 800, running loss = 8.38249687012285
+2023-08-26 09:44:07.867 | INFO     | lib.training.common:train_common:93 - step 900, running loss = 6.068164072930813
+2023-08-26 09:44:10.976 | INFO     | __main__:main:172 - epoch 2 validation acc: 0.9703 
+2023-08-26 09:44:10.976 | INFO     | __main__:main:175 - best validation acc improved to 0.9703
+2023-08-26 09:44:14.152 | INFO     | __main__:main:179 - model saved to ./output/clinc/13/model.pt
+2023-08-26 09:44:14.152 | INFO     | __main__:main:186 - time for one epoch: 0:00:44.717166
+2023-08-26 09:44:14.155 | INFO     | __main__:main:163 - epoch 3 start
+2023-08-26 09:44:18.579 | INFO     | lib.training.common:train_common:93 - step 100, running loss = 6.746306478045881
+2023-08-26 09:44:23.079 | INFO     | lib.training.common:train_common:93 - step 200, running loss = 6.323097384534776
+2023-08-26 09:44:27.565 | INFO     | lib.training.common:train_common:93 - step 300, running loss = 5.673558147624135
+2023-08-26 09:44:32.033 | INFO     | lib.training.common:train_common:93 - step 400, running loss = 3.3725637388415635
+2023-08-26 09:44:36.680 | INFO     | lib.training.common:train_common:93 - step 500, running loss = 2.7057433230802417
+2023-08-26 09:44:41.429 | INFO     | lib.training.common:train_common:93 - step 600, running loss = 3.6882845601066947
+2023-08-26 09:44:45.961 | INFO     | lib.training.common:train_common:93 - step 700, running loss = 4.425865701399744
+2023-08-26 09:44:50.474 | INFO     | lib.training.common:train_common:93 - step 800, running loss = 4.9124697502702475
+2023-08-26 09:44:54.991 | INFO     | lib.training.common:train_common:93 - step 900, running loss = 3.098828261718154
+2023-08-26 09:44:58.137 | INFO     | __main__:main:172 - epoch 3 validation acc: 0.9760 
+2023-08-26 09:44:58.138 | INFO     | __main__:main:175 - best validation acc improved to 0.9760
+2023-08-26 09:45:01.314 | INFO     | __main__:main:179 - model saved to ./output/clinc/13/model.pt
+2023-08-26 09:45:01.315 | INFO     | __main__:main:186 - time for one epoch: 0:00:47.159562
+2023-08-26 09:45:01.318 | INFO     | __main__:main:163 - epoch 4 start
+2023-08-26 09:45:05.817 | INFO     | lib.training.common:train_common:93 - step 100, running loss = 3.97647773521021
+2023-08-26 09:45:10.338 | INFO     | lib.training.common:train_common:93 - step 200, running loss = 3.5817086123861372
+2023-08-26 09:45:14.863 | INFO     | lib.training.common:train_common:93 - step 300, running loss = 4.066470795776695
+2023-08-26 09:45:19.349 | INFO     | lib.training.common:train_common:93 - step 400, running loss = 1.8618311055470258
+2023-08-26 09:45:23.890 | INFO     | lib.training.common:train_common:93 - step 500, running loss = 2.974860322661698
+2023-08-26 09:45:28.521 | INFO     | lib.training.common:train_common:93 - step 600, running loss = 2.528894886141643
+2023-08-26 09:45:33.056 | INFO     | lib.training.common:train_common:93 - step 700, running loss = 3.519689883105457
+2023-08-26 09:45:37.553 | INFO     | lib.training.common:train_common:93 - step 800, running loss = 5.978714028839022
+2023-08-26 09:45:42.045 | INFO     | lib.training.common:train_common:93 - step 900, running loss = 2.6193184966687113
+2023-08-26 09:45:45.188 | INFO     | __main__:main:172 - epoch 4 validation acc: 0.9700 
+2023-08-26 09:45:45.188 | INFO     | __main__:main:186 - time for one epoch: 0:00:43.870297
+2023-08-26 09:45:45.188 | INFO     | __main__:main:188 - training finished
+2023-08-26 09:45:45.200 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:45:47.599 | INFO     | __main__:main:193 - best model loaded
+2023-08-26 09:45:49.829 | INFO     | __main__:main:194 - test acc: 0.9653

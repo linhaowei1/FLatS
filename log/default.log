@@ -1,0 +1,43 @@
+2023-08-24 13:30:44.016 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/model.pt')
+2023-08-26 09:34:59.459 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/model.pt')
+2023-08-26 09:36:59.386 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/model.pt')
+2023-08-26 09:37:01.494 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 09:45:53.135 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/model.pt')
+2023-08-26 09:45:55.440 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 09:46:40.199 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/clinic/13/model.pt')
+2023-08-26 09:46:42.282 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 09:46:55.087 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/clinc/13/model.pt')
+2023-08-26 09:46:57.461 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 09:47:00.251 | INFO     | __main__:main:45 - model loaded from output/clinc/13/model.pt
+2023-08-26 09:47:00.312 | INFO     | __main__:main:49 - ../roberta-base tokenizer loaded
+2023-08-26 09:47:00.425 | INFO     | lib.data_loader:get_raw_data:666 - train set of clinc loaded, size = 15000
+2023-08-26 09:47:01.439 | INFO     | lib.data_loader:get_raw_data:666 - val set of clinc loaded, size = 3000
+2023-08-26 09:47:01.603 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:47:04.730 | INFO     | __main__:main:68 - token pooling: cls
+2023-08-26 09:47:13.030 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 09:47:28.032 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/13', pretrained_model='output/clinc/13/model.pt')
+2023-08-26 09:47:30.186 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 09:47:32.736 | INFO     | __main__:main:45 - model loaded from output/clinc/13/model.pt
+2023-08-26 09:47:32.797 | INFO     | __main__:main:49 - ../roberta-base tokenizer loaded
+2023-08-26 09:47:32.912 | INFO     | lib.data_loader:get_raw_data:666 - train set of clinc loaded, size = 15000
+2023-08-26 09:47:33.679 | INFO     | lib.data_loader:get_raw_data:666 - val set of clinc loaded, size = 3000
+2023-08-26 09:47:33.831 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:47:36.910 | INFO     | __main__:main:68 - token pooling: cls
+2023-08-26 09:47:45.349 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:03:36.038 | INFO     | __main__:main:33 - args:
+Namespace(batch_size=128, dataset='clinc', feature_pos='after', log_file='./log/default.log', model='../roberta-base', ood_datasets='clinc_ood', output_dir='output/clinc/2023', pretrained_model='output/clinc/2023/model.pt')
+2023-08-26 10:03:38.294 | INFO     | __main__:main:42 - ../roberta-base model loaded
+2023-08-26 10:03:40.951 | INFO     | __main__:main:45 - model loaded from output/clinc/2023/model.pt
+2023-08-26 10:03:41.011 | INFO     | __main__:main:49 - ../roberta-base tokenizer loaded
+2023-08-26 10:03:41.144 | INFO     | lib.data_loader:get_raw_data:666 - train set of clinc loaded, size = 15000
+2023-08-26 10:03:41.870 | INFO     | lib.data_loader:get_raw_data:666 - val set of clinc loaded, size = 3000
+2023-08-26 10:03:42.033 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:03:45.192 | INFO     | __main__:main:68 - token pooling: cls
+2023-08-26 10:03:53.551 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000

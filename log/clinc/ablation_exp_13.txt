@@ -1,0 +1,175 @@
+2023-08-26 09:37:03.702 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:37:06.234 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:45:57.722 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:45:59.847 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:46:44.471 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:47:15.933 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:47:18.571 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:47:48.304 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:47:50.780 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:47:53.441 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 09:47:53.497 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 09:47:53.633 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:47:53.929 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 09:47:54.022 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 09:50:45.284 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='pout', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:50:47.577 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:50:50.196 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 09:50:50.252 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 09:50:50.404 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:50:50.696 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 09:50:50.761 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 09:54:12.731 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 09:54:14.956 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 09:54:17.483 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 09:54:17.538 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 09:54:17.667 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 09:54:17.944 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 09:54:18.000 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 09:56:59.224 | INFO     | __main__:main:154 - OOD: clinc_ood
+2023-08-26 09:56:59.225 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.8730028033071362
+2023-08-26 09:56:59.225 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.21516929968618362
+2023-08-26 09:56:59.248 | INFO     | __main__:main:160 - {'AUROC': 0.9747020000000031, 'AUIN': 0.993632148372582, 'AUOUT': 0.895506535071453, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 09:56:59.248 | INFO     | __main__:main:168 - mean metrics: {'AUROC': 0.9747020000000031, 'AUIN': 0.993632148372582, 'AUOUT': 0.895506535071453, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 09:56:59.248 | INFO     | __main__:main:170 - evaluation finished
+2023-08-26 10:01:20.663 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:01:23.172 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:01:26.639 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:01:26.694 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:01:26.924 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:01:27.215 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:01:27.310 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:01:30.242 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:01:30.242 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.8735944277283912
+2023-08-26 10:01:30.242 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.21581585308237275
+2023-08-26 10:01:30.265 | INFO     | __main__:main:110 - {'AUROC': 0.9746713333333368, 'AUIN': 0.9936026489466172, 'AUOUT': 0.8954494423079373, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:01:30.265 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9746713333333368, 'AUIN': 0.9936026489466172, 'AUOUT': 0.8954494423079373, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:01:30.265 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:07:53.004 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:07:55.187 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:07:57.872 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:07:57.929 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:07:58.069 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:07:58.356 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:07:58.409 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:10:42.506 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:10:42.510 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.8735942328765209
+2023-08-26 10:10:42.510 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.21581565151022192
+2023-08-26 10:10:42.546 | INFO     | __main__:main:110 - {'AUROC': 0.9746713333333368, 'AUIN': 0.9936026489466172, 'AUOUT': 0.8954494423079373, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:10:42.547 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9746713333333368, 'AUIN': 0.9936026489466172, 'AUOUT': 0.8954494423079373, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:10:42.547 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:11:18.504 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:11:21.149 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:11:23.759 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:11:23.815 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:11:23.953 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:11:24.225 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:11:24.278 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:14:09.994 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:14:12.102 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:14:14.657 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:14:14.712 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:14:14.856 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:14:15.155 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:14:15.212 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:14:21.665 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:14:21.665 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.5196943438536388
+2023-08-26 10:14:21.665 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: -0.17888719329279862
+2023-08-26 10:14:21.693 | INFO     | __main__:main:110 - {'AUROC': 0.9364913333333329, 'AUIN': 0.9785633411565597, 'AUOUT': 0.8481785995675823, 'TNR@tpr=0.95': 0.828, 'FPR@tpr=0.95': 0.172, 'TNR@tpr=0.8': 0.912, 'FPR@tpr=0.8': 0.088}
+2023-08-26 10:14:21.693 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9364913333333329, 'AUIN': 0.9785633411565597, 'AUOUT': 0.8481785995675823, 'TNR@tpr=0.95': 0.828, 'FPR@tpr=0.95': 0.172, 'TNR@tpr=0.8': 0.912, 'FPR@tpr=0.8': 0.088}
+2023-08-26 10:14:21.694 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:15:37.658 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:15:39.855 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:15:42.481 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:15:42.537 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:15:42.708 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:15:42.988 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:15:43.041 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:15:49.035 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:15:49.036 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 1.2274945116031437
+2023-08-26 10:15:49.036 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.610518899457544
+2023-08-26 10:15:49.072 | INFO     | __main__:main:110 - {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:15:49.072 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:15:49.072 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:17:51.543 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:17:53.735 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:17:56.465 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:17:56.521 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:17:56.658 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:17:56.954 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:17:57.011 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:18:03.438 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:18:03.439 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.7274945116031439
+2023-08-26 10:18:03.439 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.1105188994575441
+2023-08-26 10:18:03.465 | INFO     | __main__:main:110 - {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:18:03.465 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:18:03.465 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:18:08.268 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:18:10.556 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:18:13.197 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:18:13.253 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:18:13.398 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:18:13.691 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:18:13.763 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:18:21.759 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:18:21.759 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 1.0732679999416055
+2023-08-26 10:18:21.759 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.4365004565805682
+2023-08-26 10:18:21.785 | INFO     | __main__:main:110 - {'AUROC': 0.9740757777777777, 'AUIN': 0.9934512864087837, 'AUOUT': 0.895074828009474, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:18:21.786 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9740757777777777, 'AUIN': 0.9934512864087837, 'AUOUT': 0.895074828009474, 'TNR@tpr=0.95': 0.868, 'FPR@tpr=0.95': 0.132, 'TNR@tpr=0.8': 0.982, 'FPR@tpr=0.8': 0.018}
+2023-08-26 10:18:21.786 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:19:30.798 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:19:32.980 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:19:35.601 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:19:35.656 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:19:35.826 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:19:36.115 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:19:36.166 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:19:42.179 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:19:42.179 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.8443744445033418
+2023-08-26 10:19:42.180 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.194756462357407
+2023-08-26 10:19:42.214 | INFO     | __main__:main:110 - {'AUROC': 0.9763973333333358, 'AUIN': 0.9943558626894632, 'AUOUT': 0.9005506520304314, 'TNR@tpr=0.95': 0.878, 'FPR@tpr=0.95': 0.122, 'TNR@tpr=0.8': 0.99, 'FPR@tpr=0.8': 0.01}
+2023-08-26 10:19:42.215 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9763973333333358, 'AUIN': 0.9943558626894632, 'AUOUT': 0.9005506520304314, 'TNR@tpr=0.95': 0.878, 'FPR@tpr=0.95': 0.122, 'TNR@tpr=0.8': 0.99, 'FPR@tpr=0.8': 0.01}
+2023-08-26 10:19:42.215 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:21:29.116 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:21:31.304 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:21:33.792 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:21:33.847 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:21:33.976 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:21:34.268 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:21:34.325 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:21:40.326 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:21:40.326 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.6982745283780943
+2023-08-26 10:21:40.326 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.08945950873257837
+2023-08-26 10:21:40.353 | INFO     | __main__:main:110 - {'AUROC': 0.9695933333333346, 'AUIN': 0.9917225993313339, 'AUOUT': 0.8995266394141169, 'TNR@tpr=0.95': 0.877, 'FPR@tpr=0.95': 0.123, 'TNR@tpr=0.8': 0.969, 'FPR@tpr=0.8': 0.031}
+2023-08-26 10:21:40.353 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9695933333333346, 'AUIN': 0.9917225993313339, 'AUOUT': 0.8995266394141169, 'TNR@tpr=0.95': 0.877, 'FPR@tpr=0.95': 0.123, 'TNR@tpr=0.8': 0.969, 'FPR@tpr=0.8': 0.031}
+2023-08-26 10:21:40.353 | INFO     | __main__:main:120 - evaluation finished
+2023-08-26 10:21:57.627 | INFO     | __main__:main:44 - args:
+Namespace(batch_size=32, dataset='clinc', eval_type='ood', input_dir='output/clinc/13', log_file='./log/clinc/ablation_exp_13.txt', model='../roberta-base', ood_datasets='clinc_ood', ood_method='knn', passes=5, pretrained_model='output/clinc/13/model.pt', save_score=False, score_save_path='./log/scores/msp/sst-2/seed13')
+2023-08-26 10:21:59.695 | INFO     | __main__:main:52 - ../roberta-base model loaded
+2023-08-26 10:22:02.148 | INFO     | __main__:main:55 - model loaded from output/clinc/13/model.pt
+2023-08-26 10:22:02.206 | INFO     | __main__:main:59 - ../roberta-base tokenizer loaded
+2023-08-26 10:22:02.323 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc loaded, size = 4500
+2023-08-26 10:22:02.593 | INFO     | lib.data_loader:get_raw_data:666 - test set of clinc_ood loaded, size = 1000
+2023-08-26 10:22:02.651 | INFO     | lib.data_loader:get_raw_data:666 - test set of wiki loaded, size = 5000
+2023-08-26 10:22:08.506 | INFO     | __main__:main:104 - OOD: clinc_ood
+2023-08-26 10:22:08.506 | INFO     | lib.metrics:get_metrics:168 - mean ind_scores: 0.7274945116031439
+2023-08-26 10:22:08.507 | INFO     | lib.metrics:get_metrics:169 - mean ood_scores: 0.1105188994575441
+2023-08-26 10:22:08.542 | INFO     | __main__:main:110 - {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:22:08.542 | INFO     | __main__:main:118 - mean metrics: {'AUROC': 0.9724753333333371, 'AUIN': 0.9926350299422567, 'AUOUT': 0.9033139424211882, 'TNR@tpr=0.95': 0.883, 'FPR@tpr=0.95': 0.117, 'TNR@tpr=0.8': 0.976, 'FPR@tpr=0.8': 0.024}
+2023-08-26 10:22:08.543 | INFO     | __main__:main:120 - evaluation finished

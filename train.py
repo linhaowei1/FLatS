@@ -16,7 +16,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', default='0,1,2,3',
                         type=str, required=False, help='GPU ids')
-    parser.add_argument('--model', default='roberta-base',help='pretrained model type')
+    parser.add_argument('--model', default='../roberta-base',help='pretrained model type')
     parser.add_argument('--pretrained_model', default=None,
                         type=str, required=False, help='the path of the model to load')
     parser.add_argument('--dataset', default='sst-2', help='training dataset')
@@ -41,17 +41,6 @@ def main():
     parser.add_argument('--log_file', type=str, default='./log/default.log')
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--optimizer', type=str,default='adam', choices=['adam', 'recadam'])
-    parser.add_argument("--recadam_anneal_fun", type=str, default='sigmoid', 
-        choices=["sigmoid", "linear", 'constant'],
-        help="the type of annealing function in RecAdam. Default sigmoid")
-    parser.add_argument("--recadam_anneal_k", type=float, default=0.2,
-        help="k for the annealing function in RecAdam.")
-    parser.add_argument("--recadam_anneal_t0", type=int, default=1000,
-        help="t0 for the annealing function in RecAdam.")
-    parser.add_argument("--recadam_anneal_w", type=float, default=1.0,
-        help="Weight for the annealing function in RecAdam. Default 1.0.")
-    parser.add_argument("--recadam_pretrain_cof", type=float, default=5000.0,
-        help="Coefficient of the quadratic penalty in RecAdam. Default 5000.0.")
     parser.add_argument("--loss_type", default='ce',choices=['ce', 'scl', 'margin'])
     parser.add_argument("--scl_reg", default=2.0, type=float)
     parser.add_argument("--eval_metric", default='acc',type=str, choices=['acc', 'f1'])
@@ -99,60 +88,21 @@ def main():
     model.to(device)
     pretrained_model = get_model(args)
     pretrained_model.to(device)
-    if torch.cuda.device_count() > 1:
-        pretrained_model = DataParallel(pretrained_model, device_ids=[int(i) for i in args.device.split(',')])
     pretrained_model.eval()
     no_decay = ["bias", "LayerNorm.weight"]
-    if args.optimizer == 'adam':
-        optimizer_grouped_parameters = [
-            {
-                "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-                "weight_decay": args.weight_decay,
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
-                "weight_decay": 0.0
-            },
-        ]
-        optimizer = AdamW(optimizer_grouped_parameters, lr=args.lr)
-    elif args.optimizer == 'recadam':
-        optimizer_grouped_parameters = [
-            {
-                "params": [p for n, p in model.named_parameters() if
-                    not any(nd in n for nd in no_decay) and 'bert' in n.lower()],
-                "weight_decay": args.weight_decay,
-                "anneal_w": args.recadam_anneal_w,
-                "pretrain_params": [p_p for p_n, p_p in pretrained_model.named_parameters() if
-                    not any(nd in p_n for nd in no_decay) and 'bert' in p_n.lower()]
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if
-                    not any(nd in n for nd in no_decay) and 'bert' not in n.lower()],
-                "weight_decay": args.weight_decay,
-                "anneal_w": 0.0,
-                "pretrain_params": [p_p for p_n, p_p in pretrained_model.named_parameters() if
-                    not any(nd in p_n for nd in no_decay) and 'bert' not in p_n.lower()]
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if
-                    any(nd in n for nd in no_decay) and 'bert' in n.lower()],
-                "weight_decay": 0.0,
-                "anneal_w": args.recadam_anneal_w,
-                "pretrain_params": [p_p for p_n, p_p in pretrained_model.named_parameters() if
-                    any(nd in p_n for nd in no_decay) and 'bert' in p_n.lower()]
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if
-                    any(nd in n for nd in no_decay) and 'bert' not in n.lower()],
-                "weight_decay": 0.0,
-                "anneal_w": 0.0,
-                "pretrain_params": [p_p for p_n, p_p in pretrained_model.named_parameters() if
-                    any(nd in p_n for nd in no_decay) and 'bert' not in p_n.lower()]
-            }
-        ]
-        optimizer = RecAdam(optimizer_grouped_parameters, lr=args.lr,
-            anneal_fun=args.recadam_anneal_fun, anneal_k=args.recadam_anneal_k,
-            anneal_t0=args.recadam_anneal_t0, pretrain_cof=args.recadam_pretrain_cof)
+
+    optimizer_grouped_parameters = [
+        {
+            "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+            "weight_decay": args.weight_decay,
+        },
+        {
+            "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+            "weight_decay": 0.0
+        },
+    ]
+    optimizer = AdamW(optimizer_grouped_parameters, lr=args.lr)
+    
     logger.info('starting training')
 
     best_acc = 0

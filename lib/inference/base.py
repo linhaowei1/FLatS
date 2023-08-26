@@ -198,33 +198,11 @@ def get_maha_score(ood_datasets, input_dir='output', token_pooling='cls'):
 
 @torch.no_grad()
 def get_out_score(model, wiki_loader, ood_datasets, input_dir='output', token_pooling='cls'):
+    
+    model.eval()
+
     def pooling_features(features):
         return features[-1, :, :]
-    
-    def sample_estimator(features, labels):
-        labels = labels.reshape(-1)
-        num_classes = np.unique(labels).shape[0]
-        group_lasso = sklearn.covariance.ShrunkCovariance()
-        sample_class_mean = []
-        for c in range(num_classes):
-            current_class_mean = np.mean(features[labels == c, :], axis=0)
-            sample_class_mean.append(current_class_mean)
-        X = [features[labels == c, :] - sample_class_mean[c] for c in range(num_classes)]
-        X = np.concatenate(X, axis=0)
-        group_lasso.fit(X)
-        precision = group_lasso.precision_
-
-        return sample_class_mean, precision
-
-    def prepare_wiki_maha(model, wiki_loader):
-        model.eval()
-        hidden = []
-        with torch.no_grad():
-            for input_ids, labels, attention_masks in tqdm(wiki_loader):
-                outputs = model(input_ids, attention_mask=attention_masks, return_dict=True, output_hidden_states=True)
-                hidden += outputs.hidden_states[-1][:, 0, :].cpu().numpy().tolist()
-        hidden = np.array(hidden)
-        return sample_estimator(hidden, np.zeros(len(hidden)))
     
     def prepare_wiki_knn(model, wiki_loader):
         model.eval()
@@ -241,91 +219,27 @@ def get_out_score(model, wiki_loader, ood_datasets, input_dir='output', token_po
         return knn
 
     knn_out = prepare_wiki_knn(model, wiki_loader)
-    sample_class_mean, precision = prepare_wiki_maha(model, wiki_loader)
 
     ind_test_features = np.load(
         '{}/{}_ind_test_features.npy'.format(input_dir, token_pooling))
     ind_test_features = pooling_features(ind_test_features)
 
-    ind_maha_scores = get_distance_score(sample_class_mean, precision, ind_test_features)
-
     ind_test_features = ind_test_features / \
         np.linalg.norm(ind_test_features, axis=-1, keepdims=True)
 
-    ind_scores = np.max(knn_out.kneighbors(ind_test_features)[0], axis=1)
-
-    ood_score_list = []
-    ood_maha_score_list = []
-    for ood_dataset in ood_datasets.split(','):
-        
-        ood_features = np.load(
-            '{}/{}_ood_features_{}.npy'.format(input_dir, token_pooling, ood_dataset))
-        ood_features = pooling_features(ood_features)
-
-        ood_maha_scores = get_distance_score(sample_class_mean, precision, ood_features)
-        
-        ood_features = ood_features / \
-            np.linalg.norm(ood_features, axis=-1, keepdims=True)
-
-        ood_scores = np.max(knn_out.kneighbors(ood_features)[0], axis=1)
-        ood_score_list.append(ood_scores)
-        ood_maha_score_list.append(ood_maha_scores)
-
-    return ind_scores, ood_score_list, ind_maha_scores, ood_maha_score_list
-
-@torch.no_grad()
-def get_pout_score(model, wiki_loader, ood_datasets, input_dir='output', token_pooling='cls'):
-
-    def pooling_features(features):
-        return features[-1, :, :]
-    
-    def prepare_wiki_knn(model, wiki_loader):
-        model = AutoModelForSequenceClassification.from_pretrained('roberta-base').cuda()
-        model.eval()
-        hidden = []
-        with torch.no_grad():
-            for input_ids, labels, attention_masks in tqdm(wiki_loader):
-                outputs = model(input_ids, attention_mask=attention_masks, return_dict=True, output_hidden_states=True)
-                hidden += outputs.hidden_states[-1][:, 0, :].cpu().numpy().tolist()
-        hidden = np.array(hidden)
-        hidden = hidden / \
-            np.linalg.norm(hidden, axis=-1, keepdims=True)
-        knn = NearestNeighbors(n_neighbors=1, algorithm='brute')
-        knn.fit(hidden)
-        return knn
-
-    knn = prepare_knn(input_dir, token_pooling)
-    knn_out = prepare_wiki_knn(model, wiki_loader)
-
-    ind_test_features = np.load(
-        '{}/{}_ind_test_features.npy'.format(input_dir, token_pooling))
-    ind_test_features = pooling_features(ind_test_features)
-    ind_test_features = ind_test_features / \
-        np.linalg.norm(ind_test_features, axis=-1, keepdims=True)
-    
-    ind_test_features = np.load(
-        '{}/{}_ind_test_features.npy'.format(input_dir, token_pooling))
-    ind_test_features = pooling_features(ind_test_features)
-    ind_test_features = ind_test_features / \
-        np.linalg.norm(ind_test_features, axis=-1, keepdims=True)
-    
-    ind_scores = np.max(knn_out.kneighbors(ind_test_features)[0], axis=1) - (np.max(knn.kneighbors(ind_test_features)[0], axis=1) + 1e-10)
+    ind_scores = 1 - np.max(knn_out.kneighbors(ind_test_features)[0], axis=1)
 
     ood_score_list = []
     for ood_dataset in ood_datasets.split(','):
+        
         ood_features = np.load(
             '{}/{}_ood_features_{}.npy'.format(input_dir, token_pooling, ood_dataset))
         ood_features = pooling_features(ood_features)
+        
         ood_features = ood_features / \
             np.linalg.norm(ood_features, axis=-1, keepdims=True)
 
-        ood_features = np.load(
-            '{}/{}_ood_features_{}.npy'.format(input_dir, token_pooling, ood_dataset))
-        ood_features = pooling_features(ood_features)
-        ood_features = ood_features / \
-            np.linalg.norm(ood_features, axis=-1, keepdims=True)
-        
-        ood_scores = np.max(knn_out.kneighbors(ood_features)[0], axis=1) - (np.max(knn.kneighbors(ood_features)[0], axis=1) + 1e-10)
+        ood_scores = 1 - np.max(knn_out.kneighbors(ood_features)[0], axis=1)
         ood_score_list.append(ood_scores)
 
     return ind_scores, ood_score_list
