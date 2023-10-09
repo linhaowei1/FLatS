@@ -1,6 +1,6 @@
 # FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score
 
-This repository contains the code for our paper [FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score](#) by [Haowei Lin](https://linhaowei1.github.io/) and [Yuntian Gu]([github.com](https://github.com/guyuntian)).
+This repository contains the code for our paper [FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score](#) by [Haowei Lin](https://linhaowei1.github.io/) and [Yuntian Gu](https://github.com/guyuntian).
 
 ## Quick Links
 
@@ -13,7 +13,7 @@ This repository contains the code for our paper [FLatS: Principled Out-of-Distri
 
 ## Overview
 
-<img src="Figures/main.jpg" style="zoom:36%;" />
+<img src="Figures/main.jpg" width="210px" />
 
 Detecting out-of-distribution (OOD) instances is crucial for NLP models in practical applications. Although numerous OOD detection methods exist, most of them are empirical. Backed by theoretical analysis, this paper advocates for the measurement of the "OOD-ness" of a test case $\boldsymbol{x}$ through the **likelihood ratio** between out-distribution $\mathcal P_{\textit{out}}$ and in-distribution $\mathcal P_{\textit{in}}$. We argue that the state-of-the-art (SOTA) feature-based OOD detection methods, such as Maha and KNN, are suboptimal since they only estimate in-distribution density $p_{\textit{in}}(\boldsymbol{x})$. To address this issue, we propose **FLatS**, a principled solution for OOD detection based on likelihood ratio. Moreover, we demonstrate that FLatS can serve as a general framework capable of enhancing other OOD detection methods by incorporating out-distribution density $p_{\textit{out}}(\boldsymbol{x})$ estimation. Experiments show that FLatS establishes a new SOTA on popular benchmarks. 
 
@@ -37,17 +37,17 @@ Then run the following script to install the remaining dependencies,
 pip install -r requirements.txt
 ```
 
-We use [faiss](https://github.com/facebookresearch/faiss) to run fast K-nearest neighbor search algorithm, so please follow the repo https://github.com/facebookresearch/faissto to install `faiss-cpu`.
+We use [faiss](https://github.com/facebookresearch/faiss) to run fast K-nearest neighbor search algorithm, so please follow the repo https://github.com/facebookresearch/faiss to install `faiss-cpu`.
 
 ## Training and Evaluation
 
 In the following section, we describe how to implement FLatS based on RoBERTa model by using our code.
 
-**Data**
+### Data
 
 Before training and evaluation, please download the datasets CLINC150 and SNIPS (note that the code can directly download banking77 using Huggingface API, and the data for ROSTD and wiki has already been prepared). The default working directory is set as ``./``(current directory) in our code. You can modify it according to your need.
 
-**Scripts**
+### Scripts
 
 We provide all the exemplar scripts to run FLatS. e.g., for CLINC150, train and evaluate using this command:
 
