@@ -60,10 +60,6 @@ def main():
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
     model.to(device)
 
-    pooler_pos = 0
-    if 'gpt' in args.model or 'xlnet' in args.model:
-        pooler_pos = -1
-
     ood_datasets = args.ood_datasets.split(',')
     ind_test_loader = get_data_loader(
         args.dataset, 'test', tokenizer, args.batch_size)
@@ -79,17 +75,8 @@ def main():
     else:  # OOD Detection Validation
         ood_scores_list = []
         ood_metrics_list = []
-        if args.ood_method == 'maha':
-            ind_scores, ood_scores_list = get_maha_score(args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'knn':
+        if args.ood_method == 'knn':
             ind_scores, ood_scores_list = get_knn_score(args.ood_datasets, args.input_dir)
-        elif args.ood_method == 'uniform':
-            ind_scores = get_base_score(model, ind_test_loader)
-            ind_scores = np.ones(len(ind_scores))
-            for ood_test_loader in ood_test_loaders:
-                ood_scores = get_base_score(model, ood_test_loader)
-                ood_scores = np.ones(len(ood_scores))
-                ood_scores_list.append(ood_scores)
         else:
             raise NotImplementedError
 

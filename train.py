@@ -9,12 +9,11 @@ from transformers import AdamW
 from lib.data_loader import  get_data_loader
 from lib.models.networks import get_model, get_tokenizer
 from lib.training.common import train_common, test_acc
-from lib.training.RecAdam import RecAdam
 from lib.exp import get_num_labels, seed_everything
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device', default='0,1,2,3',
+    parser.add_argument('--device', default='0',
                         type=str, required=False, help='GPU ids')
     parser.add_argument('--model', default='../roberta-base',help='pretrained model type')
     parser.add_argument('--pretrained_model', default=None,
@@ -40,9 +39,9 @@ def main():
                         type=str, required=False, help='model save name')
     parser.add_argument('--log_file', type=str, default='./log/default.log')
     parser.add_argument('--seed', type=int, default=42)
-    parser.add_argument('--optimizer', type=str,default='adam', choices=['adam', 'recadam'])
-    parser.add_argument("--loss_type", default='ce',choices=['ce', 'scl', 'margin'])
-    parser.add_argument("--scl_reg", default=2.0, type=float)
+    parser.add_argument('--optimizer', type=str, default='adam', choices=['adam'])
+    parser.add_argument("--loss_type", default='ce',choices=['ce'])
+    parser.add_argument("--scl_reg", default=0.0, type=float)
     parser.add_argument("--eval_metric", default='acc',type=str, choices=['acc', 'f1'])
     parser.add_argument("--save_steps", default=-1, type=int)
     args = parser.parse_args()
