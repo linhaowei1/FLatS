@@ -17,11 +17,11 @@ from lib.exp import get_num_labels
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='sst-2', help='training dataset')
+    parser.add_argument('--dataset', help='training dataset')
     parser.add_argument('--eval_type', default='ood',
                         type=str, choices=['acc', 'ood'])
     parser.add_argument('--ood_method', default='base', type=str)
-    parser.add_argument('--ood_datasets', default='20news',
+    parser.add_argument('--ood_datasets',
                         type=str, required=False)
     parser.add_argument('--batch_size', default=32, type=int,
                         required=False, help='batch size')
@@ -31,20 +31,13 @@ def main():
                         type=str, required=False, help='the path of the checkpoint to load')
     parser.add_argument('--log_file', type=str, default='./log/default.log')
     parser.add_argument('--input_dir', type=str, default=None)
-    parser.add_argument('--score_save_path',
-                        default='./log/scores/msp/sst-2/seed13')
-    parser.add_argument('--save_score', action='store_true')
-    parser.add_argument('--passes', type=int, default=5,
-                        help='number of passes in MC-Dropout')
 
     args = parser.parse_args()
 
     log_file_name = args.log_file
     logger.add(log_file_name)
     logger.info('args:\n' + args.__repr__())
-    if args.save_score:
-        if not os.path.exists(args.score_save_path):
-            os.makedirs(args.score_save_path)
+
 
     num_labels = get_num_labels(args.dataset)
     args.num_labels = num_labels
@@ -75,7 +68,7 @@ def main():
     else:  # OOD Detection Validation
         ood_scores_list = []
         ood_metrics_list = []
-        if args.ood_method == 'knn':
+        if args.ood_method == 'flats':
             ind_scores, ood_scores_list = get_knn_score(args.ood_datasets, args.input_dir)
         else:
             raise NotImplementedError
@@ -90,14 +83,10 @@ def main():
         for i, ood_dataset in enumerate(ood_datasets):
             logger.info("OOD: {}".format(ood_dataset))
             metrics = get_metrics(ind_scores, ood_scores_list[i])
-            if args.save_score:
-                np.save('{}/ood_scores_{}.npy'.format(args.score_save_path,
-                        ood_dataset), ood_scores_list[i])
+
             ood_metrics_list.append(metrics)
             logger.info(str(metrics))
 
-        if args.save_score:
-            np.save('{}/ind_scores.npy'.format(args.score_save_path), ind_scores)
         mean_metrics = {}
         for k, v in metrics.items():
             mean_metrics[k] = sum(

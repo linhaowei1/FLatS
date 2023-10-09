@@ -13,8 +13,6 @@ from lib.exp import get_num_labels, seed_everything
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--device', default='0',
-                        type=str, required=False, help='GPU ids')
     parser.add_argument('--model', default='../roberta-base',help='pretrained model type')
     parser.add_argument('--pretrained_model', default=None,
                         type=str, required=False, help='the path of the model to load')
@@ -67,9 +65,6 @@ def main():
         model.load_state_dict(torch.load(args.pretrained_model))
         logger.info("model loaded from {}".format(args.pretrained_model))
 
-    if torch.cuda.device_count() > 1:
-        logger.info("Let's use " + str(len(args.device.split(','))) + " GPUs!")
-        model = DataParallel(model, device_ids=[int(i) for i in args.device.split(',')])
     tokenizer = get_tokenizer(args.model)
     logger.info("{} tokenizer loaded".format(args.model))
     if tokenizer.pad_token_id is None:

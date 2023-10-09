@@ -12,8 +12,8 @@ from transformers import AutoModelForSequenceClassification
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='sst-2', type=str)
-    parser.add_argument('--ood_datasets', default='20news',
+    parser.add_argument('--dataset', type=str)
+    parser.add_argument('--ood_datasets',
                         type=str, required=False)
     parser.add_argument('--batch_size', default=128, type=int,
                         required=False, help='batch size')
@@ -59,8 +59,6 @@ def main():
 
     pooling = ['cls']
 
-    model_vanilla = AutoModelForSequenceClassification.from_pretrained('roberta-base').cuda()
-
     with torch.no_grad():
         
         for p in pooling:
@@ -76,15 +74,6 @@ def main():
             np.save('{}/{}_ind_test_features.npy'.format(output_dir, p), test_features)
             np.save('{}/{}_ind_test_labels.npy'.format(output_dir, p), test_labels)
 
-            train_features, _, _ = get_full_features(
-                model_vanilla, train_loader, p, pos=args.feature_pos)
-            test_features, _, _ = get_full_features(
-                model_vanilla, test_loader, p, pos=args.feature_pos)
-                
-            np.save('{}/{}_ind_train_features_vanilla.npy'.format(output_dir, p), train_features)
-            np.save('{}/{}_ind_test_features_vanilla.npy'.format(output_dir, p), test_features)
-
-
             for ood_dataset in args.ood_datasets.split(','):
                 torch.cuda.empty_cache()
 
@@ -93,10 +82,6 @@ def main():
                 ood_features, ood_labels, ood_lens = get_full_features(
                     model, loader, p, pos=args.feature_pos)
                 np.save('{}/{}_ood_features_{}.npy'.format(output_dir,
-                        p, ood_dataset), ood_features)
-                ood_features, _, _ = get_full_features(
-                    model_vanilla, loader, p, pos=args.feature_pos)
-                np.save('{}/{}_ood_features_{}_vanilla.npy'.format(output_dir,
                         p, ood_dataset), ood_features)
 
 

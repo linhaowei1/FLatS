@@ -17,15 +17,12 @@ do
         --model roberta-base \
         --pretrained_model output/snips/$seed/model.pt
 
-    for baseline in 'base' 'maxlogit' 'energy' 'maha' 'knn' 'd2u' 'odin' 'lof' 'pout'
-    do
-        CUDA_VISIBLE_DEVICES=4 python test.py \
-            --dataset snips \
-            --ood_datasets snips_ood \
-            --input_dir output/snips/$seed \
-            --model roberta-base \
-            --log_file ./log/snips/exp_$seed.txt \
-            --pretrained_model output/snips/$seed/model.pt \
-            --ood_method $baseline
-    done
+    CUDA_VISIBLE_DEVICES=4 python test.py \
+        --dataset snips \
+        --ood_datasets snips_ood \
+        --input_dir output/snips/$seed \
+        --model roberta-base \
+        --log_file ./log/snips/exp_$seed.txt \
+        --pretrained_model output/snips/$seed/model.pt \
+        --ood_method flats
 done

@@ -17,15 +17,12 @@ do
         --model roberta-base \
         --pretrained_model output/rostd/$seed/model.pt
 
-    for baseline in 'base' 'maxlogit' 'energy' 'maha' 'knn' 'd2u' 'odin' 'lof' 'pout'
-    do
-        CUDA_VISIBLE_DEVICES=3 python test.py \
-            --dataset rostd \
-            --ood_datasets rostd_ood \
-            --input_dir output/rostd/$seed \
-            --model roberta-base \
-            --log_file ./log/rostd/exp_$seed.txt \
-            --pretrained_model output/rostd/$seed/model.pt \
-            --ood_method $baseline
-    done
+    CUDA_VISIBLE_DEVICES=3 python test.py \
+        --dataset rostd \
+        --ood_datasets rostd_ood \
+        --input_dir output/rostd/$seed \
+        --model roberta-base \
+        --log_file ./log/rostd/exp_$seed.txt \
+        --pretrained_model output/rostd/$seed/model.pt \
+        --ood_method flats
 done

@@ -17,15 +17,12 @@ do
         --model roberta-base \
         --pretrained_model output/banking77/$seed/model.pt
 
-    for baseline in 'pout'
-    do
-        CUDA_VISIBLE_DEVICES=1 python test.py \
-            --dataset banking77 \
-            --ood_datasets banking77_ood \
-            --input_dir output/banking77/$seed \
-            --model roberta-base \
-            --log_file ./log/banking77/exp_$seed.txt \
-            --pretrained_model output/banking77/$seed/model.pt \
-            --ood_method $baseline
-    done
+    CUDA_VISIBLE_DEVICES=1 python test.py \
+        --dataset banking77 \
+        --ood_datasets banking77_ood \
+        --input_dir output/banking77/$seed \
+        --model roberta-base \
+        --log_file ./log/banking77/exp_$seed.txt \
+        --pretrained_model output/banking77/$seed/model.pt \
+        --ood_method flats
 done
