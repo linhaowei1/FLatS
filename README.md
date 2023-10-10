@@ -1,6 +1,5 @@
 # FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score
-
-This repository contains the code for our paper [FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score](#) by [Haowei Lin](https://linhaowei1.github.io/) and [Yuntian Gu](https://github.com/guyuntian).
+This repository contains the code for our paper [FLatS: Principled Out-of-Distribution Detection with Feature-Based Likelihood Ratio Score](https://arxiv.org/abs/2310.05083) by [Haowei Lin](https://linhaowei1.github.io/) and [Yuntian Gu](https://github.com/guyuntian).
 
 ## Quick Links
 
