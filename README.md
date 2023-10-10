@@ -62,7 +62,7 @@ If you have any questions related to the code or the paper, feel free to email [
 
 ## Acknowledgements
 
-We thank [Sishuo Chen](https://pkucss.github.io/) in Peking University and his [repo](https://github.com/lancopku/Avg-Avg) for providing an extendable framework. We use this repo as a reference when developing this code base.
+We thank [Sishuo Chen](https://pkucss.github.io/) from Peking University and his [repo](https://github.com/lancopku/Avg-Avg) which provides an extendable framework for OOD detection in NLP. We use this repo as a reference when developing this code base.
 
 ## Citation
 
